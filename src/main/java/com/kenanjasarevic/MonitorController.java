@@ -42,7 +42,7 @@ public class MonitorController {
             e.printStackTrace();
         }
 
-        return "Status updated to " + message;
+        return "Status updated to " + message + "\n";
     }
 
     @POST
@@ -50,7 +50,7 @@ public class MonitorController {
     @Produces(MediaType.TEXT_PLAIN)
     public String postStatus(@PathParam("reset") boolean reset) {
         postStatus("running");
-        return "Monitor reset completed";
+        return "Monitor reset completed\n";
     }
 
 }
