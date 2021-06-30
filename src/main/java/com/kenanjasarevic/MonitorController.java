@@ -49,8 +49,11 @@ public class MonitorController {
     @Path("/reset/{reset}")
     @Produces(MediaType.TEXT_PLAIN)
     public String postStatus(@PathParam("reset") boolean reset) {
-        postStatus("running");
-        return "Monitor reset completed\n";
+        if(reset) {
+            postStatus("running");
+            return "Monitor reset completed\n";
+        }
+        return "Monitor not reset\n";
     }
 
 }
